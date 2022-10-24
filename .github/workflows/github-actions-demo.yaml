@@ -1,0 +1,21 @@
+name: Github Actions Demo
+on: push
+jobs:
+  Example-Actions-Jobs:
+    name: Exploring Github Actions
+    runs-on: ubuntu-latest
+    steps:
+      # Display the event that triggered the workflow
+      - run: echo "The job was triggered by a ${{ github.event_name }} event"
+      # Use Action located in github
+      - name: Checkout repo code
+        uses: actions/checkout@v2
+      # Condition step
+      - name: conditional step when event name is pull request
+        if: ${{ github.event_name == 'pull_request' }}
+        run: echo "This is a pull request"
+        
+      # List files in repo
+      - name: List files in the repository
+        run:
+          ls ${{ github.workspace }}
