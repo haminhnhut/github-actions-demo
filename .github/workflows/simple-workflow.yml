@@ -29,6 +29,6 @@ jobs:
     steps:
       - name: Trigger Jenkins Job
         run: |
-          curl -X POST "https://vibu-ci.teliacompany.net/jenkins/job/VB-TCAS/job/Segron/" \
+          curl -X POST "https://vibu-ci.teliacompany.net/jenkins/job/VB-TCAS/job/Segron/build" \
             --user "yby9572:${{ secrets.JENKINS_API_TOKEN }}" \
             -H "Jenkins-Crumb:13f15c4f88d0fd5de7d7200fbb14bd15edfdaf77e9b5136ffbaa68cf3a57017a"
